@@ -13,7 +13,7 @@ const MultiStepForm = () => {
         handleSubmit,
         currentStep 
     } = useContext(StepContext);
-
+console.log(validateStep)
     const steps = [<Step1 />, <Step2 />, <Step3 />];
 
     return (

@@ -30,13 +30,22 @@ const StepProvider = ({ children }) => {
     };
 
     const validateStep = (step) => {
+        const { name, email, address, city, zipCode, cardNumber, expiryDate } = formData;
+    
         switch (step) {
             case 1:
-                return formData.name.trim() !== "" && formData.email.trim() !== "";
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return name.trim() !== "" && emailRegex.test(email.trim());
+    
             case 2:
-                return formData.address.trim() !== "" && formData.city.trim() !== "" && formData.zipCode.trim() !== "";
+                const zipCodeRegex = /^\d{5}$/;
+                return address.trim() !== "" && city.trim() !== "" && zipCodeRegex.test(zipCode.trim());
+    
             case 3:
-                return formData.cardNumber.trim() !== "" && formData.expiryDate.trim() !== "";
+                const cardNumberRegex = /^\d{16}$/;
+                const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+                return cardNumberRegex.test(cardNumber.trim()) && expiryDateRegex.test(expiryDate.trim());
+    
             default:
                 return false;
         }
@@ -72,4 +81,4 @@ const StepProvider = ({ children }) => {
     );
 };
 
-export default StepProvider; // Default export add kiya
+export default StepProvider;

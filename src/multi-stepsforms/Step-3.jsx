@@ -7,14 +7,14 @@ const Step3 = () => {
         <div className="step">
             <h2>Step 3: Payment Information</h2>
             <input
-                type="text"
+                type="number"
                 name="cardNumber"
                 placeholder="Card Number"
                 value={formData.cardNumber}
                 onChange={handleInputChange}
             />
             <input
-                type="text"
+                type="date"
                 name="expiryDate"
                 placeholder="Expiry Date (MM/YY)"
                 value={formData.expiryDate}

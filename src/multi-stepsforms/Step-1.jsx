@@ -13,6 +13,7 @@ const Step1 = () => {
                 placeholder="Name"
                 value={formData.name}
                 onChange={handleInputChange}
+                required
             />
             <input
                 type="email"
@@ -20,6 +21,7 @@ const Step1 = () => {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleInputChange}
+                required
             />
         </div>
     );

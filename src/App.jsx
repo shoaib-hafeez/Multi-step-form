@@ -5,12 +5,12 @@ function App() {
 
 
   return (
-    <>
+    <div className="App">
     <h1>Multi Task Form</h1>
     
       <MultiStepForm/>
       
-    </>
+    </div>
   )
 }
 
